@@ -221,6 +221,9 @@ bar {
 }
 
 mode "display" {
+    bindsym t exec ~/.config/i3/scripts/auto-detect.sh top
+    bindsym r exec ~/.config/i3/scripts/auto-detect.sh right
+    bindsym l exec ~/.config/i3/scripts/auto-detect.sh left
     bindsym n exec ~/.config/i3/scripts/auto-detect.sh normal
     bindsym a exec ~/.config/i3/scripts/auto-detect.sh
     # bindsym n exec ~/.screenlayout/auto-detect.sh normal
