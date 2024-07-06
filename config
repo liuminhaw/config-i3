@@ -13,7 +13,8 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:FiraCodeNerdFont-Regular 10
+#font pango:FiraCodeNerdFont-Regular 10
+font pango:IntoneMonoNerdFont-Regular 10
 # font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -118,8 +119,8 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:  "
-set $ws2 "2: 󰊯 " 
-set $ws3 "3:  "
+set $ws2 "2:  " 
+set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -216,7 +217,8 @@ bindsym $mod+r mode "resize"
 bar {
     # status_command i3status
     status_command i3blocks
-    font pango:FiraCodeNerdFont-Regular 11
+    # font pango:FiraCodeNerdFont-Regular 11
+    font pango:IntoneMonoNerdFont-Regular 10
     # font pango:FontAwesome6FreeRegular 8
 }
 
@@ -283,27 +285,27 @@ exec xinput set-prop "SNSL0027:00 2C2F:0027 Touchpad" "libinput Accel Speed" 0.4
 
 # Sreen brightness controls
 # This is used on Gentoo Linux where brightnessctl is not available in the repository
-bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/brightness.sh +5
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/brightness.sh -5
+#bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/brightness.sh +5
+#bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/brightness.sh -5
 
 # This is used on Pop!OS (Ubuntu) where brightnessctl is available in the repository
-# bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
-# bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # Run fcitx
 # Check the actual fcitx command on the system
-exec --no-startup-id fcitx
+exec --no-startup-id fcitx5
 
 # Set default workspace assignments (Customize as needed)
 # Use `xprop` to get the class of the window
 # assign [class="firefox"] $ws4
 # assign [class="Terminator"] $ws1
-assign [class="Google-chrome"] $ws2
-assign [class="firefox"] $ws3
+# assign [class="Google-chrome"] $ws2
+assign [class="firefox"] $ws2
 assign [class="Alacritty"] $ws1
 
 exec firefox
-exec google-chrome-stable
+# exec google-chrome-stable
 exec alacritty
 # exec terminator
 
