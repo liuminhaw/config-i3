@@ -282,6 +282,12 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 # exec xinput set-prop "ELAN0412:00 04F3:311D Touchpad" "libinput Natural Scrolling Enabled" 1
 exec xinput set-prop "SNSL0027:00 2C2F:0027 Touchpad" "libinput Natural Scrolling Enabled" 1
 exec xinput set-prop "SNSL0027:00 2C2F:0027 Touchpad" "libinput Accel Speed" 0.4
+# Common values for "Click Method Enabled"
+# `0, 0`: No click method
+# `1, 0`: Button areas (Click Method 1)
+# `0, 1`: Clickfinger (Click Method 2)
+# `1, 1`: both methods enabled (If supported)
+exec xinput set-prop "SNSL0027:00 2C2F:0027 Touchpad" "libinput Click Method Enabled" 0 1
 
 # Sreen brightness controls
 # This is used on Gentoo Linux where brightnessctl is not available in the repository
